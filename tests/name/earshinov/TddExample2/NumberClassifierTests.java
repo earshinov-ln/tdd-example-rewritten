@@ -28,12 +28,16 @@ public class NumberClassifierTests {
 	public void test_1_is_perfect() {
 		NumberClassifier classifier = new NumberClassifier(1);
 		assertTrue(classifier.numberIsPerfect());
+		assertFalse(classifier.numberIsAbundant());
+		assertFalse(classifier.numberIsDeficient());
 	}
 
 	@Test
 	public void test_6_is_perfect() {
 		NumberClassifier classifier = new NumberClassifier(6);
 		assertTrue(classifier.numberIsPerfect());
+		assertFalse(classifier.numberIsAbundant());
+		assertFalse(classifier.numberIsDeficient());
 	}
 
 	@Test
@@ -48,6 +52,8 @@ public class NumberClassifierTests {
 	public void test_28_is_perfect() throws Exception {
 		NumberClassifier classifier = new NumberClassifier(28);
 		assertTrue(classifier.numberIsPerfect());
+		assertFalse(classifier.numberIsAbundant());
+		assertFalse(classifier.numberIsDeficient());
 	}
 
 }
