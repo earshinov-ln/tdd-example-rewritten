@@ -49,11 +49,19 @@ public class NumberClassifierTests {
 	}
 
 	@Test
-	public void test_28_is_perfect() throws Exception {
+	public void test_28_is_perfect() {
 		NumberClassifier classifier = new NumberClassifier(28);
 		assertTrue(classifier.numberIsPerfect());
 		assertFalse(classifier.numberIsAbundant());
 		assertFalse(classifier.numberIsDeficient());
+	}
+	
+	@Test
+	public void test_27_is_deficient() {
+		NumberClassifier classifier = new NumberClassifier(27);
+		assertFalse(classifier.numberIsPerfect());
+		assertFalse(classifier.numberIsAbundant());
+		assertTrue(classifier.numberIsDeficient());
 	}
 
 }
