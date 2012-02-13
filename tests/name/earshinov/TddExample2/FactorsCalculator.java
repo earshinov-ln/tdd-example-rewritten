@@ -1,25 +1,25 @@
 package name.earshinov.TddExample2;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FactorsCalculator {
-	
-	private List<Integer> factors;
-	
+
+	private Set<Integer> factors;
+
 	public FactorsCalculator(int number) {
 		if (number <= 0)
 			throw new IllegalArgumentException();
-		factors = Collections.unmodifiableList(calculateFactors(number));
+		factors = Collections.unmodifiableSet(calculateFactors(number));
 	}
-	
-	public List<Integer> getFactors() {
+
+	public Set<Integer> getFactors() {
 		return factors;
 	}
 
-	private static ArrayList<Integer> calculateFactors(int number) {
-		ArrayList<Integer> factors = new ArrayList<Integer>();
+	private static HashSet<Integer> calculateFactors(int number) {
+		HashSet<Integer> factors = new HashSet<Integer>();
 		factors.add( 1 ); // 1 - делитель всех чисел
 		for (int i = 2; i < Math.sqrt(number); i++)
 			if (number % i == 0) {
