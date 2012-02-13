@@ -23,5 +23,11 @@ public class NumberClassifierTests {
 		NumberClassifier classifier = new NumberClassifier(12);
 		assertFalse(classifier.numberIsPerfect());
 	}
+	
+	@Test
+	public void test_28_is_perfect() throws Exception {
+		NumberClassifier classifier = new NumberClassifier(28);
+		assertTrue(classifier.numberIsPerfect());
+	}
 
 }
