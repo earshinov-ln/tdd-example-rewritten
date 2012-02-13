@@ -6,20 +6,20 @@ import org.junit.Test;
 
 public class NumberClassifierTests {
 
-	@Test
-	public void test_minus_6_is_not_perfect() {
+	@Test(expected=IllegalArgumentException.class)
+	public void test_minus_6_throws() {
 		NumberClassifier classifier = new NumberClassifier(-6);
 		assertFalse(classifier.numberIsPerfect());
 	}
 
-	@Test
-	public void test_minus_1_is_not_perfect() {
+	@Test(expected=IllegalArgumentException.class)
+	public void test_minus_1_throws() {
 		NumberClassifier classifier = new NumberClassifier(-1);
 		assertFalse(classifier.numberIsPerfect());
 	}
 
-	@Test
-	public void test_0_is_not_perfect() {
+	@Test(expected=IllegalArgumentException.class)
+	public void test_0_throws() {
 		NumberClassifier classifier = new NumberClassifier(0);
 		assertFalse(classifier.numberIsPerfect());
 	}
