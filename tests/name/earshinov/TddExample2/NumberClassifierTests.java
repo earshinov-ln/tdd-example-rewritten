@@ -37,9 +37,11 @@ public class NumberClassifierTests {
 	}
 
 	@Test
-	public void test_12_is_not_perfect() {
+	public void test_12_is_abundant() {
 		NumberClassifier classifier = new NumberClassifier(12);
 		assertFalse(classifier.numberIsPerfect());
+		assertTrue(classifier.numberIsAbundant());
+		assertFalse(classifier.numberIsDeficient());
 	}
 
 	@Test
