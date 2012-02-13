@@ -7,6 +7,12 @@ import org.junit.Test;
 public class NumberClassifierTests {
 
 	@Test
+	public void test_0_is_not_perfect() {
+		NumberClassifier classifier = new NumberClassifier(0);
+		assertFalse(classifier.numberIsPerfect());
+	}
+	
+	@Test
 	public void test_1_is_perfect() {
 		NumberClassifier classifier = new NumberClassifier(1);
 		assertTrue(classifier.numberIsPerfect());
