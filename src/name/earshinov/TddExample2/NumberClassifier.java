@@ -2,12 +2,12 @@ package name.earshinov.TddExample2;
 
 public class NumberClassifier {
 
-	private final int number;
+	final int number;
+	FactorsCalculator factorsCalculator;
 
 	public NumberClassifier(int number) {
-		if (number <= 0)
-			throw new IllegalArgumentException();
 		this.number = number;
+		factorsCalculator = new FactorsCalculator(number);
 	}
 
 	public boolean numberIsPerfect() {
@@ -22,15 +22,11 @@ public class NumberClassifier {
 		return getSumOfDivisors() < number;
 	}
 
-	/** Получить сумму делителей number */
 	private int getSumOfDivisors() {
-		int sumOfDivisors = 1; // 1 - делитель любого числа
-		for (int i = 2; i < Math.sqrt(number); i++)
-			if (number % i == 0) {
-				sumOfDivisors += i;
-				sumOfDivisors += number / i;
-			}
-		return sumOfDivisors;
+		int sum = 0;
+		for (Integer v : factorsCalculator.getFactors())
+			sum += v;
+		return sum;
 	}
 
 }
