@@ -9,7 +9,11 @@ public class NumberClassifier {
 	}
 
 	public boolean numberIsPerfect() {
-		return true;
+		int sumOfDivisors = 1; // 1 - делитель любого числа
+		for (int i = 2; i < number; i++)
+			if (number % i == 0)
+				sumOfDivisors += i;
+		return sumOfDivisors == number;
 	}
 	
 }

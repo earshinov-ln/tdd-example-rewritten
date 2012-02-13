@@ -17,5 +17,11 @@ public class NumberClassifierTests {
 		NumberClassifier classifier = new NumberClassifier(6);
 		assertTrue(classifier.numberIsPerfect());
 	}
+	
+	@Test
+	public void test_12_is_not_perfect() {
+		NumberClassifier classifier = new NumberClassifier(12);
+		assertFalse(classifier.numberIsPerfect());
+	}
 
 }
